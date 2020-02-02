@@ -2,6 +2,7 @@
   "name": "handled",
   "version": "0.0.0",
   "license": "MIT",
+  "schematics": "./tools/schematics/collection.json",
   "scripts": {
     "start:debug": "nx serve # --inspect",
     "nx": "nx",
@@ -28,9 +29,11 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/schematics": "^8.3.24",
     "@nestjs/common": "^6.10.14",
     "@nestjs/core": "^6.10.14",
     "@nestjs/platform-express": "^6.10.14",
+    "@nrwl/schematics": "^8.12.1",
     "dark-sky": "^1.1.5",
     "dark-sky-api": "^0.6.32",
     "dark-sky-client-ts": "^1.0.16",
