@@ -13,6 +13,66 @@
     },
     "postgres": {
       "tags": []
+    },
+    "darksky": {
+      "tags": []
+    },
+    "config": {
+      "tags": []
+    },
+    "intake": {
+      "tags": []
+    },
+    "types": {
+      "tags": []
+    },
+    "homeassistant": {
+      "tags": []
+    },
+    "security": {
+      "tags": []
+    },
+    "wifi": {
+      "tags": []
+    },
+    "observation": {
+      "tags": []
+    },
+    "domestic": {
+      "tags": []
+    },
+    "safety": {
+      "tags": []
+    },
+    "commute": {
+      "tags": []
+    },
+    "auto": {
+      "tags": []
+    },
+    "audio": {
+      "tags": []
+    },
+    "video": {
+      "tags": []
+    },
+    "doors": {
+      "tags": []
+    },
+    "benjamin": {
+      "tags": []
+    },
+    "quickbooks": {
+      "tags": []
+    },
+    "ynab": {
+      "tags": []
+    },
+    "lights": {
+      "tags": []
+    },
+    "external": {
+      "tags": []
     }
   }
 }

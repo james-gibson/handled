@@ -33,7 +33,8 @@
         "serve": {
           "builder": "@nrwl/node:execute",
           "options": {
-            "buildTarget": "core:build"
+            "buildTarget": "core:build",
+            "inspect": true
           }
         },
         "lint": {
@@ -78,6 +79,506 @@
           "options": {
             "jestConfig": "libs/postgres/jest.config.js",
             "tsConfig": "libs/postgres/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "darksky": {
+      "root": "libs/darksky",
+      "sourceRoot": "libs/darksky/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/darksky/tsconfig.lib.json",
+              "libs/darksky/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/darksky/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/darksky/jest.config.js",
+            "tsConfig": "libs/darksky/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "config": {
+      "root": "libs/config",
+      "sourceRoot": "libs/config/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/config/tsconfig.lib.json",
+              "libs/config/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/config/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/config/jest.config.js",
+            "tsConfig": "libs/config/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "intake": {
+      "root": "libs/intake",
+      "sourceRoot": "libs/intake/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/intake/tsconfig.lib.json",
+              "libs/intake/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/intake/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/intake/jest.config.js",
+            "tsConfig": "libs/intake/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "types": {
+      "root": "libs/types",
+      "sourceRoot": "libs/types/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/types/tsconfig.lib.json",
+              "libs/types/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/types/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/types/jest.config.js",
+            "tsConfig": "libs/types/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "homeassistant": {
+      "root": "libs/homeassistant",
+      "sourceRoot": "libs/homeassistant/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/homeassistant/tsconfig.lib.json",
+              "libs/homeassistant/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/homeassistant/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/homeassistant/jest.config.js",
+            "tsConfig": "libs/homeassistant/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "security": {
+      "root": "libs/security",
+      "sourceRoot": "libs/security/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/security/tsconfig.lib.json",
+              "libs/security/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/security/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/security/jest.config.js",
+            "tsConfig": "libs/security/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "wifi": {
+      "root": "libs/wifi",
+      "sourceRoot": "libs/wifi/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/wifi/tsconfig.lib.json",
+              "libs/wifi/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/wifi/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/wifi/jest.config.js",
+            "tsConfig": "libs/wifi/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "observation": {
+      "root": "libs/observation",
+      "sourceRoot": "libs/observation/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/observation/tsconfig.lib.json",
+              "libs/observation/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/observation/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/observation/jest.config.js",
+            "tsConfig": "libs/observation/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "domestic": {
+      "root": "libs/domestic",
+      "sourceRoot": "libs/domestic/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/domestic/tsconfig.lib.json",
+              "libs/domestic/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/domestic/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/domestic/jest.config.js",
+            "tsConfig": "libs/domestic/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "safety": {
+      "root": "libs/safety",
+      "sourceRoot": "libs/safety/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/safety/tsconfig.lib.json",
+              "libs/safety/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/safety/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/safety/jest.config.js",
+            "tsConfig": "libs/safety/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "commute": {
+      "root": "libs/commute",
+      "sourceRoot": "libs/commute/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/commute/tsconfig.lib.json",
+              "libs/commute/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/commute/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/commute/jest.config.js",
+            "tsConfig": "libs/commute/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "auto": {
+      "root": "libs/auto",
+      "sourceRoot": "libs/auto/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/auto/tsconfig.lib.json",
+              "libs/auto/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/auto/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auto/jest.config.js",
+            "tsConfig": "libs/auto/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "audio": {
+      "root": "libs/audio",
+      "sourceRoot": "libs/audio/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/audio/tsconfig.lib.json",
+              "libs/audio/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/audio/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/audio/jest.config.js",
+            "tsConfig": "libs/audio/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "video": {
+      "root": "libs/video",
+      "sourceRoot": "libs/video/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/video/tsconfig.lib.json",
+              "libs/video/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/video/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/video/jest.config.js",
+            "tsConfig": "libs/video/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "doors": {
+      "root": "libs/doors",
+      "sourceRoot": "libs/doors/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/doors/tsconfig.lib.json",
+              "libs/doors/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/doors/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/doors/jest.config.js",
+            "tsConfig": "libs/doors/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "benjamin": {
+      "root": "libs/benjamin",
+      "sourceRoot": "libs/benjamin/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/benjamin/tsconfig.lib.json",
+              "libs/benjamin/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/benjamin/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/benjamin/jest.config.js",
+            "tsConfig": "libs/benjamin/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "quickbooks": {
+      "root": "libs/quickbooks",
+      "sourceRoot": "libs/quickbooks/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/quickbooks/tsconfig.lib.json",
+              "libs/quickbooks/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/quickbooks/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/quickbooks/jest.config.js",
+            "tsConfig": "libs/quickbooks/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "ynab": {
+      "root": "libs/ynab",
+      "sourceRoot": "libs/ynab/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ynab/tsconfig.lib.json",
+              "libs/ynab/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ynab/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ynab/jest.config.js",
+            "tsConfig": "libs/ynab/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "lights": {
+      "root": "libs/lights",
+      "sourceRoot": "libs/lights/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/lights/tsconfig.lib.json",
+              "libs/lights/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/lights/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/lights/jest.config.js",
+            "tsConfig": "libs/lights/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "external": {
+      "root": "libs/external",
+      "sourceRoot": "libs/external/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/external/tsconfig.lib.json",
+              "libs/external/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/external/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/external/jest.config.js",
+            "tsConfig": "libs/external/tsconfig.spec.json"
           }
         }
       }
