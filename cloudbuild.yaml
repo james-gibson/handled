@@ -1,0 +1,21 @@
+steps:
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['ci']
+  # - name: 'gcr.io/cloud-builders/npm'
+  #   args: ['run-script', 'build']
+  # - name: 'gcr.io/cloud-builders/gcloud'
+  #   args:
+  #     [
+  #       'functions',
+  #       'deploy',
+  #       'handled-test',
+  #       '--source',
+  #       'dist/',
+  #       '--entry-point',
+  #       'handler',
+  #       '--region',
+  #       'us-central1',
+  #       '--trigger-http',
+  #       '--runtime',
+  #       'nodejs8'
+  #     ]
