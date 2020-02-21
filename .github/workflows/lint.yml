@@ -1,6 +1,6 @@
 name: Quality Control
 # This workflow is triggered on pushes to the repository.
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -14,16 +14,25 @@ jobs:
         id: hello
       - name: Echo the greeting's time
         run: echo 'The time was ${{ steps.hello.outputs.time }}.'
-  eslint:
-    name: eslint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: install node v12
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Install
-        run: npm ci
-      - name: eslint
-        uses: icrawl/action-eslint@v1
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - name: Use Node.js
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ matrix.node-version }}
+        - name: Install
+          run: npm ci
+        - name: Run lint
+          shell: bash
+          run: |
+            if [[ $GITHUB_BASE_REF ]]
+            then
+              export NX_BASE=remotes/origin/$GITHUB_BASE_REF
+            else
+              export NX_BASE=$(git rev-parse HEAD~1)
+            fi
+            echo "Base => $NX_BASE"
+            npm run format:check -- --base=$NX_BASE
+            npm run affected:lint -- --base=$NX_BASE
