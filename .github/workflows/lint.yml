@@ -9,11 +9,9 @@ jobs:
         - uses: actions/checkout@v1
         - name: Use Node.js
           uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node-version }}
         - name: Install
           run: npm ci
-        - name: Run lint
+        - name: Run affectedLint
           shell: bash
           run: |
             if [[ $GITHUB_BASE_REF ]]
@@ -25,3 +23,23 @@ jobs:
             echo "Base => $NX_BASE"
             npm run format:check -- --base=$NX_BASE
             npm run affected:lint -- --base=$NX_BASE
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+      - name: Install
+        run: npm ci
+      - name: Run affectedTest
+        shell: bash
+        run: |
+          if [[ $GITHUB_BASE_REF ]]
+          then
+            export NX_BASE=remotes/origin/$GITHUB_BASE_REF
+          else
+            export NX_BASE=$(git rev-parse HEAD~1)
+          fi
+          echo "Base => $NX_BASE"
+          npm run format:check -- --base=$NX_BASE
+          npm run affected:test -- --base=$NX_BASE
