@@ -83,7 +83,10 @@
                 "command": "webpack --config apps/test-function/webpack.serverless.js"
               },
               {
-                "command": "cp package.json apps/test-function/dist/ && mkdir -p apps/test-function/dist/templates && cp -r apps/test-function/src/app/templates dist/"
+                "command": "cp package.json apps/test-function/dist/ && mkdir -p apps/test-function/dist/templates && cp -r apps/test-function/src/app/templates apps/test-function/dist/"
+              },
+              {
+                "command": "ls -alt apps/test-function/dist;"
               }
             ],
             "cwd": "apps/test-function/",
