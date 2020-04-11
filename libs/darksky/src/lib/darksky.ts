@@ -21,7 +21,7 @@ export class DarkskyService {
     .exclude('minutely,daily')
     .get()
     .then((data:DarkSkyResponse) => {
-      //console.log(data);
+      console.log(data);
 
       return data;
     })

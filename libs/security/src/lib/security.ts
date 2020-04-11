@@ -1,1 +1,1 @@
-import * from "@handled/types";
+import * as Types from "@handled/types";

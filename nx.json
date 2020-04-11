@@ -11,6 +11,9 @@
     "core": {
       "tags": []
     },
+    "test-function": {
+      "tags": []
+    },
     "postgres": {
       "tags": []
     },

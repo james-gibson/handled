@@ -58,6 +58,66 @@
         }
       }
     },
+    "test-function": {
+      "root": "apps/test-function",
+      "sourceRoot": "apps/test-function/src",
+      "projectType": "application",
+      "prefix": "test-function",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "color": true,
+            "commands": [
+              {
+                "command": "ls -alt apps/test-function/; rm -rf apps/test-function/dist"
+              },
+              {
+                "command": "webpack --config apps/test-function/webpack.vue.client.js"
+              },
+              {
+                "command": "webpack --config apps/test-function/webpack.vue.server.js"
+              },
+              {
+                "command": "webpack --config apps/test-function/webpack.serverless.js"
+              },
+              {
+                "command": "cp package.json apps/test-function/dist/ && mkdir -p apps/test-function/dist/templates && cp -r apps/test-function/src/app/templates dist/"
+              }
+            ],
+            "cwd": "apps/test-function/",
+            "parallel": false
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "test-function:build",
+            "inspect": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "apps/test-function/.eslintrc",
+            "tsConfig": [
+              "apps/test-function/tsconfig.app.json",
+              "apps/test-function/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/test-function/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/test-function/jest.config.js",
+            "tsConfig": "apps/test-function/tsconfig.spec.json"
+          }
+        }
+      }
+    },
     "postgres": {
       "root": "libs/postgres",
       "sourceRoot": "libs/postgres/src",

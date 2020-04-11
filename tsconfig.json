@@ -10,6 +10,7 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
+    "types": [],
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
@@ -36,9 +37,10 @@
       "@handled/quickbooks": ["libs/quickbooks/src/index.ts"],
       "@handled/ynab": ["libs/ynab/src/index.ts"],
       "@handled/lights": ["libs/lights/src/index.ts"],
-      "@handled/external": ["libs/external/src/index.ts"]
+      "@handled/external": ["libs/external/src/index.ts"],
+      "@handled/test-function": ["apps/test-function/"],
     }
   },
-  "exclude": ["node_modules/**", "tmp"],
+  "exclude": ["node_modules", "tmp", "dist"],
   "include": ["libs/**/*.ts", "apps/**/*.ts"]
 }

@@ -32,7 +32,7 @@ interface WeatherRecord {
 
 const weatherRecordToPostgresRecord = (record:DarkSkyResponse):WeatherRecord => {
   const { latitude, longitude, timezone, currently } = record;
-  const timestamp = Date.now() / 1000;
+  const timestamp = Number((Date.now()/1000).toFixed(0));
 
   return { 
     latitude, 
@@ -40,7 +40,7 @@ const weatherRecordToPostgresRecord = (record:DarkSkyResponse):WeatherRecord => 
     ...currently,
     timezone, 
     timestamp,
-    time: currently.time / 1000
+    time: currently.time
   };
 }
 @Injectable()
