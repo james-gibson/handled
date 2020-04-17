@@ -106,6 +106,7 @@
     "nodemon": "^1.19.1",
     "prettier": "1.17.0",
     "supertest": "4.0.2",
+    "terser-webpack-plugin": "^2.3.5",
     "ts-jest": "24.0.2",
     "ts-loader": "^6.1.0",
     "ts-node": "8.1.0",
