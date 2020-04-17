@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const vueConfig = require("./vue.config");
 
 const baseConfig = require('./webpack.vue.js');
 
@@ -14,7 +15,7 @@ let config = merge(baseConfig, {
   output: {
     path: path.resolve('./apps/test-function/dist/vue/client'),
     filename: '[name].[hash:8].js',
-    publicPath: '/dist/',
+    publicPath: `${publicPath}/dist/`,
   },
   module: {
     rules: [{
