@@ -35,7 +35,7 @@ async function bootstrap() {
     console.log('Bootstrap');
     const nest = await NestFactory.create(
         AppModule,
-        new ExpressAdapter(expressApp)
+        new ExpressAdapter(expressApp),
     );
     const httpAdapter = nest.getHttpAdapter();
 
@@ -46,7 +46,7 @@ async function bootstrap() {
     return httpAdapter;
 }
 const init = bootstrap();
-
+expressApp.static('vue/client');
 expressApp.get('/data', (req: Express.Request, res: Express.Response) => {
     res.json({});
 });
@@ -59,6 +59,7 @@ expressApp.get('*', (req, res) => {
     renderer.renderToString(context, (err, html) => {
         if (err) {
             if (+err.message === 404) {
+                console.log({context, err})
                 res.status(404).end('Page not found');
             } else {
                 console.log(err);
