@@ -39,14 +39,14 @@ if (!isProduction) {
   config = merge(config, {
     output: {
       filename: '[name].js',
-      publicPath: '/',
+      publicPath: '/public',
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
     devtool: 'source-map',
     devServer: {
       writeToDisk: true,
       contentBase: path.resolve(__dirname, './apps/test-function/dist/vue/client/'),
-      publicPath: 'http://localhost:4200/',
+      publicPath: 'http://localhost:4200/public',
       hot: true,
       inline: true,
       historyApiFallback: true,
