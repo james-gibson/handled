@@ -39,7 +39,7 @@ if (!isProduction) {
   config = merge(config, {
     output: {
       filename: '[name].js',
-      publicPath: 'http://localhost:4200/',
+      publicPath: '/',
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
     devtool: 'source-map',
