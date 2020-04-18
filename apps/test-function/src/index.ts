@@ -1,7 +1,7 @@
 const path = require('path');
 
 import { NestFactory } from '@nestjs/core';
-import { ExpressAdapter } from '@nestjs/platform-express';
+import { ExpressAdapter, NestExpressApplication } from '@nestjs/platform-express';
 
 import { Context, HandlerFunction } from '@google-cloud/functions-framework';
 import { AppModule } from './app.module';
@@ -33,12 +33,12 @@ const expressApp = Express();
 
 async function bootstrap() {
     console.log('Bootstrap');
-    const nest = await NestFactory.create(
+    const nest = await NestFactory.create<NestExpressApplication>(
         AppModule,
         new ExpressAdapter(expressApp),
     );
     const httpAdapter = nest.getHttpAdapter();
-
+    nest.useStaticAssets(path.join(__dirname, 'vue', 'client'));
     // This listen might not be needed but removing it breaks the cloud function, REVISIT
     // I speculate this is because nest does not attach to express until this is called.
     // maybe better methods exist.
@@ -46,7 +46,7 @@ async function bootstrap() {
     return httpAdapter;
 }
 const init = bootstrap();
-expressApp.static('vue/client');
+
 expressApp.get('/data', (req: Express.Request, res: Express.Response) => {
     res.json({});
 });
