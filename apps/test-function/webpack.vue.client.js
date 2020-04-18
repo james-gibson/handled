@@ -66,4 +66,5 @@ if (!isProduction) {
   });
 }
 
+console.log(JSON.stringify(config));
 module.exports = config;
