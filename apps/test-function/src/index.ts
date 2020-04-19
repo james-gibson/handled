@@ -11,8 +11,10 @@ import * as Express from 'express';
 const { createBundleRenderer } = require('vue-server-renderer');
 
 console.log('Loading template');
+
+const templateSrc = path.resolve(`${process.env.HANDLED_IS_LOCAL ? process.cwd() : __dirname}/dist/templates/index.html`)
 const template = require('fs').readFileSync(
-    path.join(`${process.cwd()}/dist/templates/index.html`),
+    path.join(templateSrc),
     'utf-8'
 );
 
