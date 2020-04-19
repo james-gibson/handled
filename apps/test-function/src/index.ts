@@ -3,7 +3,7 @@ const path = require('path');
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter, NestExpressApplication } from '@nestjs/platform-express';
 
-import { Context, HandlerFunction,ServeStaticOptions } from '@google-cloud/functions-framework';
+import { Context, HandlerFunction } from '@google-cloud/functions-framework';
 import { AppModule } from './app.module';
 
 import * as Express from 'express';
@@ -12,13 +12,13 @@ const { createBundleRenderer } = require('vue-server-renderer');
 
 console.log('Loading template');
 const template = require('fs').readFileSync(
-    path.join('templates/index.html'),
+    path.join(`${process.cwd()}/dist/templates/index.html`),
     'utf-8'
 );
 
 console.log('Creating Vue');
-const serverBundle = require('../dist/vue/server/vue-ssr-server-bundle.json');
-const clientManifest = require('../dist/vue/client/vue-ssr-client-manifest.json');
+const serverBundle = require(`../dist/vue/server/vue-ssr-server-bundle.json`);
+const clientManifest = require(`../dist/vue/client/vue-ssr-client-manifest.json`);
 console.log('Creating Vue:Renderer');
 const renderer = createBundleRenderer(serverBundle, {
     runInNewContext: false,
@@ -30,6 +30,7 @@ const renderer = createBundleRenderer(serverBundle, {
 console.log('Creating express');
 
 const expressApp = Express();
+const publicSrcDir = path.join(process.cwd(), './dist/vue/client');
 
 async function bootstrap() {
     console.log('Bootstrap');
@@ -38,7 +39,12 @@ async function bootstrap() {
         new ExpressAdapter(expressApp),
     );
     const httpAdapter = nest.getHttpAdapter();
-    nest.useStaticAssets(path.join(__dirname, 'vue', 'client'), {prefix: 'public'} as ServeStaticOptions);
+
+    console.log({ __dirname, publicSrcDir });
+    // nest.use(Express.static(publicSrcDir, {prefix: 'public'}));
+
+    nest.useStaticAssets(publicSrcDir, {prefix: '/'});
+    //nest.useStaticAssets(path.join(__dirname, 'vue', 'client'), {prefix: 'public'});
     // This listen might not be needed but removing it breaks the cloud function, REVISIT
     // I speculate this is because nest does not attach to express until this is called.
     // maybe better methods exist.
@@ -46,7 +52,7 @@ async function bootstrap() {
     return httpAdapter;
 }
 const init = bootstrap();
-
+expressApp.use('/public', Express.static(publicSrcDir));
 expressApp.get('/data', (req: Express.Request, res: Express.Response) => {
     res.json({});
 });
@@ -59,7 +65,7 @@ expressApp.get('*', (req, res) => {
     renderer.renderToString(context, (err, html) => {
         if (err) {
             if (+err.message === 404) {
-                console.log({context, err})
+                console.log(`404 Not Found: ${context.url}`)
                 res.status(404).end('Page not found');
             } else {
                 console.log(err);

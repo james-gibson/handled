@@ -1,18 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es2017",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "types": [],
-    "typeRoots": ["node_modules/@types"],
-  },
-  "exclude": ["dist", "**/*.spec.ts"],
-  "include": ["./src/**/*.ts"]
+  "extends": "./tsconfig.core.json",
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
 }

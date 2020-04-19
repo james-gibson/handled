@@ -1,4 +1,7 @@
 // vue.config.js
+
+const isProduction = process.env.NODE_ENV === 'production';
+const isLocal = process.env.HANDLED_IS_LOCAL
 module.exports = {
-    publicPath: '/vue-nest-cloud-function',
+    publicPath: isProduction && !isLocal ? '/test-function/public' : '/public',
 }

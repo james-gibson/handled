@@ -6,7 +6,7 @@ const ENV = "development";
 const IS_PROD = true; //ENV === "production";
 const PLUGINS = IS_PROD ? [] : [new webpack.HotModuleReplacementPlugin(), new webpack.WatchIgnorePlugin([/\.js$/, /\.d\.ts$/])];
 module.exports = {
-    entry: ['./apps/test-function/src/index.ts'], //'webpack/hot/poll?100', './src/index.ts'],
+    entry: [`${__dirname}/src/index.ts`], //'webpack/hot/poll?100', './src/index.ts'],
     target: 'node',
     externals: [
         nodeExternals({

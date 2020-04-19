@@ -10,12 +10,12 @@ const baseConfig = require('./webpack.vue.js');
 const isProduction = process.env.NODE_ENV === 'production';
 
 let config = merge(baseConfig, {
-  entry: ['./apps/test-function/src/app/entry-client.js'],
+  entry: [`${__dirname}/src/app/entry-client.js`],
   plugins: [new VueSSRClientPlugin()],
   output: {
-    path: path.resolve('./apps/test-function/dist/vue/client'),
+    path: path.resolve(`${__dirname}/dist/vue/client`),
     filename: '[name].[hash:8].js',
-    publicPath: `${vueConfig.publicPath}/dist/`,
+    publicPath: `${vueConfig.publicPath}/`,
   },
   module: {
     rules: [{
@@ -39,13 +39,13 @@ if (!isProduction) {
   config = merge(config, {
     output: {
       filename: '[name].js',
-      publicPath: '/public',
+      publicPath: '/public/',
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
     devtool: 'source-map',
     devServer: {
       writeToDisk: true,
-      contentBase: path.resolve(__dirname, './apps/test-function/dist/vue/client/'),
+      contentBase: path.resolve(__dirname, './dist/vue/client/'),
       publicPath: 'http://localhost:4200/public',
       hot: true,
       inline: true,

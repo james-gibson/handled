@@ -71,25 +71,25 @@
             "color": true,
             "commands": [
               {
-                "command": "ls -alt apps/test-function/; rm -rf apps/test-function/dist"
+                "command": "ls -alt ./apps/test-function/; rm -rf ./apps/test-function/dist"
               },
               {
-                "command": "webpack --config apps/test-function/webpack.vue.client.js"
+                "command": "webpack --config ./apps/test-function/webpack.vue.client.js"
               },
               {
-                "command": "webpack --config apps/test-function/webpack.vue.server.js"
+                "command": "webpack --config ./apps/test-function/webpack.vue.server.js"
               },
               {
-                "command": "webpack --config apps/test-function/webpack.serverless.js"
+                "command": "webpack --config ./apps/test-function/webpack.serverless.js"
               },
               {
-                "command": "cp package.json apps/test-function/dist/ && mkdir -p apps/test-function/dist/templates && cp -r apps/test-function/src/app/templates apps/test-function/dist/"
+                "command": "cp package.json ./apps/test-function/dist/ && mkdir -p ./apps/test-function/dist/templates && cp -r ./apps/test-function/src/app/templates ./apps/test-function/dist/"
               },
               {
-                "command": "ls -alt apps/test-function/dist;"
+                "command": "ls -alt ./apps/test-function/dist;"
               }
             ],
-            "cwd": "apps/test-function/",
+            "cwd": "",
             "parallel": false
           }
         },
@@ -98,7 +98,8 @@
           "options": {
             "buildTarget": "test-function:build",
             "inspect": true
-          }
+          },
+          "modulePath":"apps/test-function/dist/index.js"
         },
         "lint": {
           "builder": "@nrwl/linter:lint",

@@ -6,14 +6,14 @@ const baseConfig = require('./webpack.vue.js');
 
 
 module.exports = merge(baseConfig, {
-  entry: './apps/test-function/src/app/entry-server.js',
+  entry: `${__dirname}/src/app/entry-server.js`,
 
   target: 'node',
 
   devtool: 'source-map',
 
   output: {
-    path: path.resolve('./apps/test-function/dist/vue/server'),
+    path: path.resolve(`${__dirname}/dist/vue/server`),
     libraryTarget: 'commonjs2',
   },
 
