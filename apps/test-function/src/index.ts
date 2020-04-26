@@ -19,8 +19,8 @@ const template = require('fs').readFileSync(
 );
 
 console.log('Creating Vue');
-const serverBundle = require(`../dist/vue/server/vue-ssr-server-bundle.json`);
-const clientManifest = require(`../dist/vue/client/vue-ssr-client-manifest.json`);
+const serverBundle = require(`./vue/server/vue-ssr-server-bundle.json`);
+const clientManifest = require(`./vue/client/vue-ssr-client-manifest.json`);
 console.log('Creating Vue:Renderer');
 const renderer = createBundleRenderer(serverBundle, {
     runInNewContext: false,
@@ -32,7 +32,7 @@ const renderer = createBundleRenderer(serverBundle, {
 console.log('Creating express');
 
 const expressApp = Express();
-const publicSrcDir = path.join(process.cwd(), './dist/vue/client');
+const publicSrcDir = path.join(process.cwd(), './vue/client');
 
 async function bootstrap() {
     console.log('Bootstrap');
