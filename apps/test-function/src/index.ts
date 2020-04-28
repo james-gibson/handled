@@ -1,5 +1,5 @@
 const path = require('path');
-
+const fs = require('fs');
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter, NestExpressApplication } from '@nestjs/platform-express';
 
@@ -13,14 +13,14 @@ const { createBundleRenderer } = require('vue-server-renderer');
 console.log('Loading template');
 
 const templateSrc = path.resolve(`${process.env.HANDLED_IS_LOCAL ? process.cwd() : __dirname}/dist/templates/index.html`)
-const template = require('fs').readFileSync(
+const template = fs.readFileSync(
     path.join(templateSrc),
     'utf-8'
 );
 
 console.log('Creating Vue');
-const serverBundle = require(`./vue/server/vue-ssr-server-bundle.json`);
-const clientManifest = require(`./vue/client/vue-ssr-client-manifest.json`);
+const serverBundle = fs.readFileSync(`${process.env.HANDLED_IS_LOCAL ? '../dist/' : ''}vue/server/vue-ssr-server-bundle.json`);
+const clientManifest = fs.readFileSync(`${process.env.HANDLED_IS_LOCAL ? '../dist/' : ''}vue/client/vue-ssr-client-manifest.json`);
 console.log('Creating Vue:Renderer');
 const renderer = createBundleRenderer(serverBundle, {
     runInNewContext: false,
@@ -32,7 +32,7 @@ const renderer = createBundleRenderer(serverBundle, {
 console.log('Creating express');
 
 const expressApp = Express();
-const publicSrcDir = path.join(process.cwd(), './vue/client');
+const publicSrcDir = path.join(process.cwd(), './dist/vue/client');
 
 async function bootstrap() {
     console.log('Bootstrap');
