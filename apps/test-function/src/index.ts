@@ -12,7 +12,7 @@ const { createBundleRenderer } = require('vue-server-renderer');
 
 console.log('Loading template');
 
-const templateSrc = path.resolve(`${process.env.HANDLED_IS_LOCAL ? process.cwd() : __dirname}/dist/templates/index.html`)
+const templateSrc = path.resolve(`${process.env.HANDLED_IS_LOCAL ? process.cwd() + '/dist' : __dirname}/templates/index.html`);
 const template = fs.readFileSync(
     path.join(templateSrc),
     'utf-8'
