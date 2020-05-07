@@ -10,6 +10,11 @@ export function createApp() {
   const router = createRouter();
   const store = createStore();
 
+  router.beforeEach((to, from, next) => {
+    const nextRoute = `/handled${to.path}`
+    console.log(nextRoute)
+    next(nextRoute)
+  })
   sync(store, router);
 
   const app = new Vue({
