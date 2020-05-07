@@ -9,6 +9,7 @@
     "start": "nx serve",
     "build": "FORCE_COLOR=true nx build test-function",
     "build:prod": "HANDLED_IS_LOCAL=true FORCE_COLOR=true npm run build:ci",
+    "serve:prod": "HANDLED_IS_LOCAL=true FORCE_COLOR=true nx serve test-function",
     "build:ci": "NODE_ENV=production nx build test-function",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",

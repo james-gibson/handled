@@ -94,12 +94,32 @@
           }
         },
         "serve": {
-          "builder": "@nrwl/node:execute",
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "buildTarget": "test-function:build",
-            "inspect": true
-          },
-          "modulePath":"apps/test-function/dist/index.js"
+            "color": true,
+            "commands": [
+              {
+                "command": "ls -alt ./apps/test-function/; rm -rf ./apps/test-function/dist"
+              },
+              {
+                "command": "webpack --config ./apps/test-function/webpack.vue.client.js"
+              },
+              {
+                "command": "webpack --config ./apps/test-function/webpack.vue.server.js"
+              },
+              {
+                "command": "webpack --config ./apps/test-function/webpack.serverless.js"
+              },
+              {
+                "command": "mkdir -p ./apps/test-function/dist/ && cp package.json ./apps/test-function/dist/ && cp -r ./apps/test-function/src/app/templates ./apps/test-function/dist/"
+              },
+              {
+                "command": "ls -alt ./apps/test-function/dist;"
+              }
+            ],
+            "cwd": "",
+            "parallel": false
+          }
         },
         "lint": {
           "builder": "@nrwl/linter:lint",
@@ -111,6 +131,19 @@
               "apps/test-function/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**", "!apps/test-function/**"]
+          }
+        },
+        "launch": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "color": true,
+            "commands": [
+              {
+                "command": "node index.js"
+              }
+            ],
+            "cwd": "./apps/test-function/dist/",
+            "parallel": false
           }
         },
         "test": {

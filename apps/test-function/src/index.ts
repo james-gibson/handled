@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+import * as path from 'path';
+import * as fs from 'fs';
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter, NestExpressApplication } from '@nestjs/platform-express';
 
@@ -8,24 +8,31 @@ import { AppModule } from './app.module';
 
 import * as Express from 'express';
 
-const { createBundleRenderer } = require('vue-server-renderer');
+import { createBundleRenderer } from 'vue-server-renderer';
 
 console.log('Loading template');
 
-const templateSrc = path.resolve(`${process.env.HANDLED_IS_LOCAL ? process.cwd() + '/dist' : '.'}/templates/index.html`);
+const templateSrc = path.resolve(`./templates/index.html`);
 const template = fs.readFileSync(
     path.join(templateSrc),
     'utf-8'
 );
 
 console.log('Creating Vue');
-const serverBundle = fs.readFileSync(`${process.env.HANDLED_IS_LOCAL ? '../dist/' : ''}vue/server/vue-ssr-server-bundle.json`);
-const clientManifest = fs.readFileSync(`${process.env.HANDLED_IS_LOCAL ? '../dist/' : ''}vue/client/vue-ssr-client-manifest.json`);
+const serverBundle = fs.readFileSync(
+    path.resolve(`./vue/server/vue-ssr-server-bundle.json`),
+    'utf-8'
+);
+const clientManifest = fs.readFileSync(
+    path.resolve(`./vue/client/vue-ssr-client-manifest.json`),
+    'utf-8'
+);
+
 console.log('Creating Vue:Renderer');
-const renderer = createBundleRenderer(serverBundle, {
+const renderer = createBundleRenderer(JSON.parse(serverBundle), {
     runInNewContext: false,
     template,
-    clientManifest,
+    clientManifest: JSON.parse(clientManifest),
     inject: false,
 });
 
@@ -46,7 +53,7 @@ async function bootstrap() {
     // nest.use(Express.static(publicSrcDir, {prefix: 'public'}));
 
     nest.useStaticAssets(publicSrcDir, {prefix: '/'});
-    //nest.useStaticAssets(path.join(__dirname, 'vue', 'client'), {prefix: 'public'});
+    // nest.useStaticAssets(path.join(__dirname, 'vue', 'client'), {prefix: 'public'});
     // This listen might not be needed but removing it breaks the cloud function, REVISIT
     // I speculate this is because nest does not attach to express until this is called.
     // maybe better methods exist.
