@@ -15,7 +15,7 @@ let config = merge(baseConfig, {
   output: {
     path: path.resolve(`${__dirname}/dist/vue/client`),
     filename: '[name].[hash:8].js',
-    publicPath: `${vueConfig.rootPath}/`,
+    publicPath: `${vueConfig.publicPath}/`,
   },
   module: {
     rules: [{
