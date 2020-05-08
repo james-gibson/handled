@@ -11,6 +11,9 @@ export function createApp() {
   const store = createStore();
 
   router.beforeEach((to, from, next) => {
+    if (to.path.includes('/handled')) {
+      next(to)
+    }
     const nextRoute = `/handled${to.path}`
     console.log(nextRoute)
     next(nextRoute)
