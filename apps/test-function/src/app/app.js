@@ -12,7 +12,7 @@ export function createApp() {
 
   router.beforeEach((to, from, next) => {
     if (to.path.includes('/handled')) {
-      next(to)
+      return next(to)
     }
     const nextRoute = `/handled${to.path}`
     console.log(nextRoute)
