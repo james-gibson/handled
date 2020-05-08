@@ -66,7 +66,7 @@ expressApp.get('/handled/data', (req: Express.Request, res: Express.Response) =>
     res.json({});
 });
 
-expressApp.get('/handled/*', (req, res) => {
+expressApp.get('*', (req, res) => {
     const context = {
         url: req.url,
     };
