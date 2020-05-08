@@ -2,8 +2,8 @@
 
 export default {
   pages: {
-    contact: '/contact/',
-    about: '/about/',
-    main: '/',
+    contact: '/handled/contact/',
+    about: '/handled/about/',
+    main: '/handled/',
   },
 };
