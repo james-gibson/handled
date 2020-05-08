@@ -48,7 +48,7 @@ async function bootstrap() {
         new ExpressAdapter(expressApp),
     );
     const httpAdapter = nest.getHttpAdapter();
-
+    nest.setGlobalPrefix('handled');
     console.log({ __dirname, publicSrcDir });
     // nest.use(Express.static(publicSrcDir, {prefix: 'public'}));
 
