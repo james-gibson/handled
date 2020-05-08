@@ -52,7 +52,7 @@ async function bootstrap() {
     console.log({ __dirname, publicSrcDir });
     // nest.use(Express.static(publicSrcDir, {prefix: 'public'}));
 
-    nest.useStaticAssets(publicSrcDir, {prefix: '/public'});
+    nest.useStaticAssets(publicSrcDir, {prefix: '/handled/public'});
     // nest.useStaticAssets(path.join(__dirname, 'vue', 'client'), {prefix: 'public'});
     // This listen might not be needed but removing it breaks the cloud function, REVISIT
     // I speculate this is because nest does not attach to express until this is called.
@@ -61,12 +61,12 @@ async function bootstrap() {
     return httpAdapter;
 }
 const init = bootstrap();
-expressApp.use('/public', Express.static(publicSrcDir));
-expressApp.get('/data', (req: Express.Request, res: Express.Response) => {
+expressApp.use('/handled/public', Express.static(publicSrcDir));
+expressApp.get('/handled/data', (req: Express.Request, res: Express.Response) => {
     res.json({});
 });
 
-expressApp.get('*', (req, res) => {
+expressApp.get('/handled/*', (req, res) => {
     const context = {
         url: req.url,
     };
