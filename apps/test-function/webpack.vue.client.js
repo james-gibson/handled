@@ -4,7 +4,7 @@ const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const vueConfig = require("./vue.config");
-
+console.log({vueConfig})
 const baseConfig = require('./webpack.vue.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -39,7 +39,7 @@ if (!isProduction) {
   config = merge(config, {
     output: {
       filename: '[name].js',
-      publicPath: '/public/',
+      publicPath: `${vueConfig.publicPath}/`,
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
     devtool: 'source-map',
@@ -66,5 +66,5 @@ if (!isProduction) {
   });
 }
 
-console.log(JSON.stringify(config));
+console.log(JSON.stringify(config.output));
 module.exports = config;

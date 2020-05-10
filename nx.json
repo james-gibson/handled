@@ -82,7 +82,7 @@
     "default": {
       "runner": "@nrwl/workspace/src/tasks-runner/tasks-runner-v2",
       "options": {
-        "cacheableOperations": ["build", "test", "lint"]
+        "cacheableOperations": ["test", "lint"]
       }
     }
   }
