@@ -8,11 +8,7 @@ import { AppService } from './app.service';
 const distDir = './vue/client'; // join(__dirname, ".", "vue", "client");
 console.log({ distDir });
 @Module({
-    imports: [
-        ServeStaticModule.forRoot({
-            rootPath: distDir,
-        }),
-    ],
+    imports: [],
     controllers: [AppController],
     providers: [AppService],
 })
