@@ -34,6 +34,7 @@ async function bootstrap() {
     // I speculate this is because nest does not attach to express until this is called.
     // maybe better methods exist.
     await nest.listen(3000);
+    console.log('bootstrapped');
     return httpAdapter;
 }
 const init = bootstrap();
@@ -41,5 +42,3 @@ const init = bootstrap();
 module.exports = {
     handler: expressApp,
 };
-
-console.log('bootstrapped');

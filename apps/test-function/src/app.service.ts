@@ -45,7 +45,7 @@ export class AppService {
         console.log(err, renderContext)
         if (+err.message === 404) {
             console.log(`404 Not Found: ${renderContext}`);
-            html ='Page not found';
+            html = 'Page not found';
         } else {
             console.log(err);
             html = 'Internal Server Error';
