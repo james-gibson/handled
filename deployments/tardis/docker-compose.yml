@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  proxy:
+    container_name: proxy
+    hostname: proxy
+    image: nginx
+    ports: 
+      - 80:80
+      - 443:443
+    volumes: 
+      - ./config/nginx:/etc/nginx
+      - ./config/ssl:/etc/ssl/private
+  echo:
+    container_name: echo
+    hostname: echo
+    image: mendhak/http-https-echo
+  
