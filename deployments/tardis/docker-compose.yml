@@ -15,4 +15,22 @@ services:
     container_name: echo
     hostname: echo
     image: mendhak/http-https-echo
-  
+  echo2:
+    container_name: echo2
+    hostname: echo2
+    image: polyverse/node-echo-server
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+    environment:
+      TZ: "America/Denver"
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
