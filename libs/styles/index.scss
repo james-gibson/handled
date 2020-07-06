@@ -3,6 +3,8 @@
 $onyx: #333745;
 $arctic: #f4f4f4;
 $lemon: #ffee11;
+$rose: #fca7a7;
+$sunny: #fff266;
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -63,7 +65,7 @@ a {
   background-color: #ffee11;
 
   &:hover {
-    background-color: #fff266;
+    background-color: $sunny;
   }
 }
 
@@ -72,7 +74,7 @@ pre {
   overflow-wrap: wrap;
   font-family: "Inconsolata", sans-serif;
   margin: 2rem 0;
-  background-color: pink;
+  background-color: $rose;
 }
 
 h6,
@@ -87,13 +89,16 @@ button {
   margin-right: 2rem;
   padding: 0.5rem 2rem;
   font-family: "Montserrat";
+  letter-spacing: 3px;
   position: relative;
   text-align: left;
   padding-left: 2rem;
   font-size: 1.25rem;
+  text-transform: lowercase;
   font-variant: small-caps;
   border: 3px solid $onyx;
   background-color: $lemon;
+  box-sizing: border-box;
 
   &:after {
     content: "";
@@ -107,11 +112,19 @@ button {
     z-index: -1;
   }
 
+  // &:focus {
+  //   outline: 8px solid $rose;
+  // }
+
   &.primary {
     &:hover {
       &:after {
         background-color: $onyx;
       }
+    }
+
+    &:active {
+      background-color: $sunny;
     }
   }
 
@@ -128,6 +141,39 @@ button {
           transparent 5px
         );
       }
+    }
+
+    &:active {
+      &:after {
+        background-color: $onyx;
+      }
+    }
+  }
+}
+
+hr {
+  margin: 3rem 0;
+}
+
+ul.pill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+
+  .pill {
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+
+    &:nth-child(even) {
+      background-color: $sunny;
+    }
+
+    &:nth-child(odd) {
+      background-color: $rose;
+    }
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
     }
   }
 }
