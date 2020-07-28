@@ -156,6 +156,14 @@
         }
       }
     },
+    "styles": {
+      "root": "libs/styles",
+      "sourceRoot": "libs/styles/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+      }
+    },
     "postgres": {
       "root": "libs/postgres",
       "sourceRoot": "libs/postgres/src",
