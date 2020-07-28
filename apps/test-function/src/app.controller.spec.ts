@@ -1,12 +1,12 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+// import { Test, TestingModule } from '@nestjs/testing';
+// import { AppController } from './app.controller';
+// import { AppService } from './app.service';
 
 describe('placeholder', () => {
   it('is held', () => {
     expect(true).toEqual(true);
-  })
-})
+  });
+});
 // describe('AppController', () => {
 //   let appController: AppController;
 
