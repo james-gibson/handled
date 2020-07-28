@@ -25,7 +25,7 @@
                 "us-central1",
                 "--trigger-http",
                 "--runtime",
-                "nodejs8"
+                "nodejs10"
               ]
         },
         {
@@ -43,7 +43,7 @@
                 "us-central1",
                 "--trigger-http",
                 "--runtime",
-                "nodejs8"
+                "nodejs10"
               ]
         }
 
