@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import { NestFactory} from '@nestjs/core';
 import { ExpressAdapter, NestExpressApplication } from '@nestjs/platform-express';
 
-import { Context, HandlerFunction } from '@google-cloud/functions-framework';
+// import { Context, HandlerFunction } from '@google-cloud/functions-framework';
 import { AppModule } from './app.module';
 
 import * as Express from 'express';
