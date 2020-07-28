@@ -5,11 +5,6 @@
     "module": "commonjs",
     "types": ["jest", "node"]
   },
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ],
-  "exclude": [
-    "**/*.js"
-  ]
+  "include": ["**/*.spec.ts", "**/*.d.ts"],
+  "exclude": ["**/*.js"]
 }

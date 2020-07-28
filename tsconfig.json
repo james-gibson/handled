@@ -39,7 +39,7 @@
       "@handled/ynab": ["libs/ynab/src/index.ts"],
       "@handled/lights": ["libs/lights/src/index.ts"],
       "@handled/external": ["libs/external/src/index.ts"],
-      "@handled/test-function": ["apps/test-function/"],
+      "@handled/test-function": ["apps/test-function/"]
     }
   },
   "exclude": ["node_modules", "tmp", "dist", "**/*.spec.ts"],

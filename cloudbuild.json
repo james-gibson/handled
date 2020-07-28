@@ -1,51 +1,50 @@
 {
-    "steps": [
-        {
-            "name":"gcr.io/cloud-builders/npm",
-            "args":["ci"],
-            "id": "install"
-        },
-        {
-            "name":"gcr.io/cloud-builders/npm",
-            "args": ["run-script", "build:ci"],
-            "id": "build"
-        },
-        {
-            "name":"gcr.io/cloud-builders/gcloud",
-            "waitFor": ["build"],
-            "args":[
-                "functions",
-                "deploy",
-                "handled-test",
-                "--source",
-                "apps/test-function/dist/",
-                "--entry-point",
-                "handler",
-                "--region",
-                "us-central1",
-                "--trigger-http",
-                "--runtime",
-                "nodejs10"
-              ]
-        },
-        {
-            "name":"gcr.io/cloud-builders/gcloud",
-            "waitFor": ["build"],
-            "args":[
-                "functions",
-                "deploy",
-                "handled-test-two",
-                "--source",
-                "apps/test-function/dist/",
-                "--entry-point",
-                "handler",
-                "--region",
-                "us-central1",
-                "--trigger-http",
-                "--runtime",
-                "nodejs10"
-              ]
-        }
-
-    ]
+  "steps": [
+    {
+      "name": "gcr.io/cloud-builders/npm",
+      "args": ["ci"],
+      "id": "install"
+    },
+    {
+      "name": "gcr.io/cloud-builders/npm",
+      "args": ["run-script", "build:ci"],
+      "id": "build"
+    },
+    {
+      "name": "gcr.io/cloud-builders/gcloud",
+      "waitFor": ["build"],
+      "args": [
+        "functions",
+        "deploy",
+        "handled-test",
+        "--source",
+        "apps/test-function/dist/",
+        "--entry-point",
+        "handler",
+        "--region",
+        "us-central1",
+        "--trigger-http",
+        "--runtime",
+        "nodejs10"
+      ]
+    },
+    {
+      "name": "gcr.io/cloud-builders/gcloud",
+      "waitFor": ["build"],
+      "args": [
+        "functions",
+        "deploy",
+        "handled-test-two",
+        "--source",
+        "apps/test-function/dist/",
+        "--entry-point",
+        "handler",
+        "--region",
+        "us-central1",
+        "--trigger-http",
+        "--runtime",
+        "nodejs10"
+      ]
+    }
+  ]
 }
