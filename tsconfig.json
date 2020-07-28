@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
+    "outDir": "dist",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -41,6 +42,6 @@
       "@handled/test-function": ["apps/test-function/"],
     }
   },
-  "exclude": ["node_modules", "tmp", "dist"],
+  "exclude": ["node_modules", "tmp", "dist", "**/*.spec.ts"],
   "include": ["libs/**/*.ts", "apps/**/*.ts"]
 }

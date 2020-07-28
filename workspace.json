@@ -127,7 +127,7 @@
             "linter": "eslint",
             "config": "apps/test-function/.eslintrc",
             "tsConfig": [
-              "apps/test-function/tsconfig.app.json",
+              "apps/test-function/tsconfig.core.json",
               "apps/test-function/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**", "!apps/test-function/**"]

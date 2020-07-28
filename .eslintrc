@@ -6,7 +6,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module",
     "project": "./tsconfig.json",
-    "createDefaultProgram": true,
+    "createDefaultProgram": true
   },
   "plugins": [
     "@typescript-eslint",
@@ -14,11 +14,11 @@
     "no-secrets"
   ],
   "extends": [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'prettier/@typescript-eslint'
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
   ],
   "rules": {
     "no-secrets/no-secrets":["error",{"tolerance":3.5}],
