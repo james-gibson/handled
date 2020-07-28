@@ -1,3 +1,5 @@
+![Quality Control](https://github.com/james-gibson/handled/workflows/Quality%20Control/badge.svg)
+
 # Handled
 
 This project was generated using [Nx](https://nx.dev).
