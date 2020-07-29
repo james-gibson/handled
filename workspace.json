@@ -148,7 +148,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "cwd": "apps/test-function/",
           "options": {
             "jestConfig": "apps/test-function/jest.config.js",
             "tsConfig": "apps/test-function/tsconfig.spec.json"
