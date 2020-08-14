@@ -9,6 +9,10 @@ const templateSrc = path.resolve(
   path.join(__dirname, `./templates/index.html`),
 );
 
+const template = fs.readFileSync(
+    templateSrc,
+    'utf-8',
+);
 const getServerBundle = () =>
   fs.readFileSync(
     path.resolve(`./vue/server/vue-ssr-server-bundle.json`),
