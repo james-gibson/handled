@@ -10,8 +10,8 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "types": ["jest","node"],
-    "typeRoots": ["node_modules/@types"],
+    "types": ["jest", "node"],
+    "typeRoots": ["node_modules/@types"]
   },
   "exclude": ["dist", "**/*.spec.ts"],
   "include": ["./src/**/*.ts"]

@@ -5,27 +5,26 @@ import { createBundleRenderer } from 'vue-server-renderer';
 console.log({currentPath:path.resolve('.')});
 console.log('Loading template');
 
-const templateSrc = path.resolve(`./templates/index.html`);
-const template = fs.readFileSync(
-    path.join(templateSrc),
-    'utf-8',
+const templateSrc = path.resolve(
+  path.join(__dirname, `./templates/index.html`),
 );
 
-console.log('Creating Vue');
-const serverBundle = fs.readFileSync(
+const getServerBundle = () =>
+  fs.readFileSync(
     path.resolve(`./vue/server/vue-ssr-server-bundle.json`),
     'utf-8',
 );
-const clientManifest = fs.readFileSync(
+const getClientManifest = () =>
+  fs.readFileSync(
     path.resolve(`./vue/client/vue-ssr-client-manifest.json`),
     'utf-8',
 );
 
-console.log('Creating Vue:Renderer');
-const renderer = createBundleRenderer(JSON.parse(serverBundle), {
+console.log("Creating Vue:Renderer");
+const renderer = createBundleRenderer(JSON.parse(getServerBundle()), {
     runInNewContext: false,
     template,
-    clientManifest: JSON.parse(clientManifest),
+  clientManifest: JSON.parse(getClientManifest()),
     inject: true,
 });
 
@@ -34,9 +33,8 @@ export class AppService {
   getHello(): string {
     return 'Hello World!';
   }
-  getRoot(context: { response, request }): any {
-    const renderContext = {url: context.request.url };
-    console.log('getting route', renderContext);
+  getRoot(context: { response; request }): any {
+    const renderContext = { url: context.request.url };
     let html;
     try {
       html = renderer.renderToString(renderContext);
