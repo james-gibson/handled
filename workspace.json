@@ -87,7 +87,6 @@
                 "command": "ls -alt ./apps/test-function/dist;"
               }
             ],
-            "cwd": "",
             "parallel": false
           }
         },
@@ -115,7 +114,6 @@
                 "command": "ls -alt ./apps/test-function/dist;"
               }
             ],
-            "cwd": "",
             "parallel": false
           }
         },
