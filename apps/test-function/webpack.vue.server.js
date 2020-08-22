@@ -1,20 +1,19 @@
-const path = require('path');
-const merge = require('webpack-merge');
-const nodeExternals = require('webpack-node-externals');
-const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
-const baseConfig = require('./webpack.vue.js');
-
+const path = require("path");
+const merge = require("webpack-merge");
+const nodeExternals = require("webpack-node-externals");
+const VueSSRServerPlugin = require("vue-server-renderer/server-plugin");
+const baseConfig = require("./webpack.vue.js");
 
 module.exports = merge(baseConfig, {
   entry: `${__dirname}/src/app/entry-server.js`,
 
-  target: 'node',
+  target: "node",
 
-  devtool: 'source-map',
+  devtool: "source-map",
 
   output: {
     path: path.resolve(`${__dirname}/dist/vue/server`),
-    libraryTarget: 'commonjs2',
+    libraryTarget: "commonjs2",
   },
 
   externals: nodeExternals({
@@ -23,14 +22,16 @@ module.exports = merge(baseConfig, {
 
   plugins: [new VueSSRServerPlugin()],
   module: {
-    rules: [{
-      test: /\.css$/,
-      loader: 'css-loader',
-      options: {
-        modules: {
-          localIdentName: '[local]_[hash:base64:8]',
+    rules: [
+      {
+        test: /\.css$/,
+        loader: "css-loader",
+        options: {
+          modules: {
+            localIdentName: "[local]_[hash:base64:8]",
+          },
         },
       },
-    }],
+    ],
   },
 });
