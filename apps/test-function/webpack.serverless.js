@@ -10,7 +10,7 @@ module.exports = {
     target: 'node',
     externals: [
         nodeExternals({
-            whitelist: [],
+            allowlist: [],
         }),
     ],
     module: {
