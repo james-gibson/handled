@@ -3,9 +3,9 @@
   "implicitDependencies": {
     "workspace.json": "*",
     "package.json": "*",
-    "tsconfig.json": "*",
     "tslint.json": "*",
-    "nx.json": "*"
+    "nx.json": "*",
+    "tsconfig.base.json": "*"
   },
   "projects": {
     "core": {
@@ -88,5 +88,8 @@
         "cacheableOperations": ["test", "lint"]
       }
     }
+  },
+  "affected": {
+    "defaultBase": "master"
   }
 }

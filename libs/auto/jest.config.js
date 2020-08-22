@@ -2,8 +2,9 @@ module.exports = {
   name: "auto",
   preset: "../../jest.config.js",
   transform: {
-    "^.+\\.[tj]sx?$": "ts-jest"
+    "^.+\\.[tj]sx?$": "ts-jest",
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "html"],
-  coverageDirectory: "../../coverage/libs/auto"
+  coverageDirectory: "../../coverage/libs/auto",
+  globals: { "ts-jest": { tsConfig: "<rootDir>/tsconfig.spec.json" } },
 };

@@ -41,19 +41,17 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "apps/core/.eslintrc",
             "tsConfig": [
               "apps/core/tsconfig.app.json",
               "apps/core/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/core/**"]
+            "exclude": ["**/node_modules/**", "!apps/core/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/core/jest.config.js",
-            "tsConfig": "apps/core/tsconfig.spec.json"
+            "jestConfig": "apps/core/jest.config.js"
           }
         }
       }
@@ -125,12 +123,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "apps/test-function/.eslintrc",
             "tsConfig": [
               "apps/test-function/tsconfig.core.json",
               "apps/test-function/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/test-function/**"]
+            "exclude": ["**/node_modules/**", "!apps/test-function/**/*"]
           }
         },
         "launch": {
@@ -149,8 +146,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/test-function/jest.config.js",
-            "tsConfig": "apps/test-function/tsconfig.spec.json"
+            "jestConfig": "apps/test-function/jest.config.js"
           }
         }
       }
@@ -177,14 +173,13 @@
               "libs/postgres/tsconfig.lib.json",
               "libs/postgres/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/postgres/**"]
+            "exclude": ["**/node_modules/**", "!libs/postgres/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/postgres/jest.config.js",
-            "tsConfig": "libs/postgres/tsconfig.spec.json"
+            "jestConfig": "libs/postgres/jest.config.js"
           }
         }
       }
@@ -204,14 +199,13 @@
               "libs/darksky/tsconfig.lib.json",
               "libs/darksky/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/darksky/**"]
+            "exclude": ["**/node_modules/**", "!libs/darksky/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/darksky/jest.config.js",
-            "tsConfig": "libs/darksky/tsconfig.spec.json"
+            "jestConfig": "libs/darksky/jest.config.js"
           }
         }
       }
@@ -231,14 +225,13 @@
               "libs/config/tsconfig.lib.json",
               "libs/config/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/config/**"]
+            "exclude": ["**/node_modules/**", "!libs/config/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/config/jest.config.js",
-            "tsConfig": "libs/config/tsconfig.spec.json"
+            "jestConfig": "libs/config/jest.config.js"
           }
         }
       }
@@ -258,14 +251,13 @@
               "libs/intake/tsconfig.lib.json",
               "libs/intake/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/intake/**"]
+            "exclude": ["**/node_modules/**", "!libs/intake/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/intake/jest.config.js",
-            "tsConfig": "libs/intake/tsconfig.spec.json"
+            "jestConfig": "libs/intake/jest.config.js"
           }
         }
       }
@@ -285,14 +277,13 @@
               "libs/types/tsconfig.lib.json",
               "libs/types/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/types/**"]
+            "exclude": ["**/node_modules/**", "!libs/types/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/types/jest.config.js",
-            "tsConfig": "libs/types/tsconfig.spec.json"
+            "jestConfig": "libs/types/jest.config.js"
           }
         }
       }
@@ -312,14 +303,13 @@
               "libs/homeassistant/tsconfig.lib.json",
               "libs/homeassistant/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/homeassistant/**"]
+            "exclude": ["**/node_modules/**", "!libs/homeassistant/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/homeassistant/jest.config.js",
-            "tsConfig": "libs/homeassistant/tsconfig.spec.json"
+            "jestConfig": "libs/homeassistant/jest.config.js"
           }
         }
       }
@@ -339,14 +329,13 @@
               "libs/security/tsconfig.lib.json",
               "libs/security/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/security/**"]
+            "exclude": ["**/node_modules/**", "!libs/security/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/security/jest.config.js",
-            "tsConfig": "libs/security/tsconfig.spec.json"
+            "jestConfig": "libs/security/jest.config.js"
           }
         }
       }
@@ -366,14 +355,13 @@
               "libs/wifi/tsconfig.lib.json",
               "libs/wifi/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/wifi/**"]
+            "exclude": ["**/node_modules/**", "!libs/wifi/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/wifi/jest.config.js",
-            "tsConfig": "libs/wifi/tsconfig.spec.json"
+            "jestConfig": "libs/wifi/jest.config.js"
           }
         }
       }
@@ -393,14 +381,13 @@
               "libs/observation/tsconfig.lib.json",
               "libs/observation/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/observation/**"]
+            "exclude": ["**/node_modules/**", "!libs/observation/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/observation/jest.config.js",
-            "tsConfig": "libs/observation/tsconfig.spec.json"
+            "jestConfig": "libs/observation/jest.config.js"
           }
         }
       }
@@ -420,14 +407,13 @@
               "libs/domestic/tsconfig.lib.json",
               "libs/domestic/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/domestic/**"]
+            "exclude": ["**/node_modules/**", "!libs/domestic/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/domestic/jest.config.js",
-            "tsConfig": "libs/domestic/tsconfig.spec.json"
+            "jestConfig": "libs/domestic/jest.config.js"
           }
         }
       }
@@ -447,14 +433,13 @@
               "libs/safety/tsconfig.lib.json",
               "libs/safety/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/safety/**"]
+            "exclude": ["**/node_modules/**", "!libs/safety/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/safety/jest.config.js",
-            "tsConfig": "libs/safety/tsconfig.spec.json"
+            "jestConfig": "libs/safety/jest.config.js"
           }
         }
       }
@@ -474,14 +459,13 @@
               "libs/commute/tsconfig.lib.json",
               "libs/commute/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/commute/**"]
+            "exclude": ["**/node_modules/**", "!libs/commute/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/commute/jest.config.js",
-            "tsConfig": "libs/commute/tsconfig.spec.json"
+            "jestConfig": "libs/commute/jest.config.js"
           }
         }
       }
@@ -501,14 +485,13 @@
               "libs/auto/tsconfig.lib.json",
               "libs/auto/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/auto/**"]
+            "exclude": ["**/node_modules/**", "!libs/auto/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/auto/jest.config.js",
-            "tsConfig": "libs/auto/tsconfig.spec.json"
+            "jestConfig": "libs/auto/jest.config.js"
           }
         }
       }
@@ -528,14 +511,13 @@
               "libs/audio/tsconfig.lib.json",
               "libs/audio/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/audio/**"]
+            "exclude": ["**/node_modules/**", "!libs/audio/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/audio/jest.config.js",
-            "tsConfig": "libs/audio/tsconfig.spec.json"
+            "jestConfig": "libs/audio/jest.config.js"
           }
         }
       }
@@ -555,14 +537,13 @@
               "libs/video/tsconfig.lib.json",
               "libs/video/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/video/**"]
+            "exclude": ["**/node_modules/**", "!libs/video/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/video/jest.config.js",
-            "tsConfig": "libs/video/tsconfig.spec.json"
+            "jestConfig": "libs/video/jest.config.js"
           }
         }
       }
@@ -582,14 +563,13 @@
               "libs/doors/tsconfig.lib.json",
               "libs/doors/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/doors/**"]
+            "exclude": ["**/node_modules/**", "!libs/doors/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/doors/jest.config.js",
-            "tsConfig": "libs/doors/tsconfig.spec.json"
+            "jestConfig": "libs/doors/jest.config.js"
           }
         }
       }
@@ -609,14 +589,13 @@
               "libs/benjamin/tsconfig.lib.json",
               "libs/benjamin/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/benjamin/**"]
+            "exclude": ["**/node_modules/**", "!libs/benjamin/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/benjamin/jest.config.js",
-            "tsConfig": "libs/benjamin/tsconfig.spec.json"
+            "jestConfig": "libs/benjamin/jest.config.js"
           }
         }
       }
@@ -636,14 +615,13 @@
               "libs/quickbooks/tsconfig.lib.json",
               "libs/quickbooks/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/quickbooks/**"]
+            "exclude": ["**/node_modules/**", "!libs/quickbooks/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/quickbooks/jest.config.js",
-            "tsConfig": "libs/quickbooks/tsconfig.spec.json"
+            "jestConfig": "libs/quickbooks/jest.config.js"
           }
         }
       }
@@ -663,14 +641,13 @@
               "libs/ynab/tsconfig.lib.json",
               "libs/ynab/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ynab/**"]
+            "exclude": ["**/node_modules/**", "!libs/ynab/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ynab/jest.config.js",
-            "tsConfig": "libs/ynab/tsconfig.spec.json"
+            "jestConfig": "libs/ynab/jest.config.js"
           }
         }
       }
@@ -690,14 +667,13 @@
               "libs/lights/tsconfig.lib.json",
               "libs/lights/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/lights/**"]
+            "exclude": ["**/node_modules/**", "!libs/lights/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/lights/jest.config.js",
-            "tsConfig": "libs/lights/tsconfig.spec.json"
+            "jestConfig": "libs/lights/jest.config.js"
           }
         }
       }
@@ -717,14 +693,13 @@
               "libs/external/tsconfig.lib.json",
               "libs/external/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/external/**"]
+            "exclude": ["**/node_modules/**", "!libs/external/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/external/jest.config.js",
-            "tsConfig": "libs/external/tsconfig.spec.json"
+            "jestConfig": "libs/external/jest.config.js"
           }
         }
       }

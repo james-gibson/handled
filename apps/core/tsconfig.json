@@ -1,9 +1,24 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "types": ["node", "jest"],
     "emitDecoratorMetadata": true
   },
-  "include": ["**/*.ts"],
-  "exclude": ["**/*.js"]
+  "include": [],
+  "exclude": ["**/*.js"],
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
 }

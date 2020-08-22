@@ -2,8 +2,9 @@ module.exports = {
   name: "observation",
   preset: "../../jest.config.js",
   transform: {
-    "^.+\\.[tj]sx?$": "ts-jest"
+    "^.+\\.[tj]sx?$": "ts-jest",
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "html"],
-  coverageDirectory: "../../coverage/libs/observation"
+  coverageDirectory: "../../coverage/libs/observation",
+  globals: { "ts-jest": { tsConfig: "<rootDir>/tsconfig.spec.json" } },
 };

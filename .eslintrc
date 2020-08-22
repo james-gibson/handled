@@ -1,18 +1,13 @@
-
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
-    "project": "./tsconfig.json",
+    "project": "./tsconfig.base.json",
     "createDefaultProgram": true
   },
-  "plugins": [
-    "@typescript-eslint",
-    "@nrwl/nx",
-    "no-secrets"
-  ],
+  "plugins": ["@typescript-eslint", "@nrwl/nx", "no-secrets"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -21,7 +16,12 @@
     "prettier/@typescript-eslint"
   ],
   "rules": {
-    "no-secrets/no-secrets":["error",{"tolerance":3.5}],
+    "no-secrets/no-secrets": [
+      "error",
+      {
+        "tolerance": 3.5
+      }
+    ],
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-parameter-properties": "off",
@@ -30,7 +30,10 @@
       {
         "allow": [],
         "depConstraints": [
-          { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": ["*"]
+          }
         ]
       }
     ]
