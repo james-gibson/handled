@@ -6,7 +6,7 @@ console.log({ currentPath: path.resolve(".") });
 console.log("Loading template");
 
 const templateSrc = path.resolve(
-  path.join(__dirname, `./templates/index.html`)
+  path.join(path.resolve("."), `templates/index.html`)
 );
 
 const template = fs.readFileSync(templateSrc, "utf-8");
