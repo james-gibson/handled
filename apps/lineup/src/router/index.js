@@ -8,7 +8,7 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
   {
     path: "/add",
@@ -17,41 +17,42 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ "../views/Add.vue"),
+  },
+  {
+    path: "/eval",
+    component: () =>
+      import(/* webpackChunkName: "eval-values"*/ "../views/Eval.vue"),
     children: [
       {
-        path: "eval-values",
-        component: () =>
-          import(
-            /* webpackChunkName: "eval-values"*/ "../views/Eval-Values.vue"
-          )
+        path: "",
+        component: () => import("../components/Eval-Values.vue"),
       },
       {
-        path: "eval-funcs",
+        path: "funcs",
         component: () =>
           import(
-            /* webpackChunkName: "eval-funcs"*/ "../views/Eval-Functions.vue"
-          )
+            /* webpackChunkName: "eval-funcs"*/ "../components/Eval-Functions.vue"
+          ),
       },
       {
-        path: "eval-powerup",
+        path: "powerups",
         component: () =>
           import(
-            /* webpackChunkName: "eval-powerup"*/ "../views/Eval-Powerups.vue"
-          )
-      }
-    ]
+            /* webpackChunkName: "eval-powerup"*/ "../components/Eval-Powerups.vue"
+          ),
+      },
+    ],
   },
   {
     path: "/review",
     name: "Review",
-    component: () => import("../views/Review.vue")
-  }
+    component: () => import("../views/Review.vue"),
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
-
 export default router;
