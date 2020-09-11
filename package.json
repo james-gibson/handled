@@ -82,7 +82,7 @@
     "webpack-node-externals": "^2.5.1"
   },
   "devDependencies": {
-    "@google-cloud/functions-framework": "^1.6.0",
+    "@google-cloud/functions-framework": "^1.7.1",
     "@nestjs/schematics": "7.0.1",
     "@nestjs/testing": "7.4.2",
     "@nrwl/eslint-plugin-nx": "10.0.12",
