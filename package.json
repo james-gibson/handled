@@ -120,7 +120,7 @@
     "tslint": "5.16.0",
     "typescript": "3.9.7",
     "vue-hot-reload-api": "^2.3.3",
-    "webpack": "^4.44.1",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-node-externals": "^2.5.2",
