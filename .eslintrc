@@ -7,7 +7,7 @@
     "project": "./tsconfig.base.json",
     "createDefaultProgram": true
   },
-  "plugins": ["@typescript-eslint", "@nrwl/nx", "no-secrets"],
+  "plugins": ["@typescript-eslint",  "no-secrets"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -25,18 +25,18 @@
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-parameter-properties": "off",
-    "@nrwl/nx/enforce-module-boundaries": [
-      "error",
-      {
-        "allow": [],
-        "depConstraints": [
-          {
-            "sourceTag": "*",
-            "onlyDependOnLibsWithTags": ["*"]
-          }
-        ]
-      }
-    ]
+    // "@nrwl/nx/enforce-module-boundaries": [
+    //   "error",
+    //   {
+    //     "allow": [],
+    //     "depConstraints": [
+    //       {
+    //         "sourceTag": "*",
+    //         "onlyDependOnLibsWithTags": ["*"]
+    //       }
+    //     ]
+    //   }
+    // ]
   },
   "overrides": [
     {
