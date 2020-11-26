@@ -1,0 +1,66 @@
+$lilac: #edc9ffff;
+$pink: #fed4e7ff;
+$melon: #f2b79fff;
+$golden: #e5b769ff;
+$citrine: #d8cc34ff;
+$green: #94c794;
+$opal: #c0d8cf;
+$black: #222222;
+$text: #ddd;
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+  p {
+    font-size: 16px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 700;
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+}
+
+#app {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $text;
+  // background-color: $black;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 3rem;
+
+  a {
+    color: $citrine;
+  }
+}
