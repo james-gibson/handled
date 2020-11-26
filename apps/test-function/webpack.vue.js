@@ -1,7 +1,9 @@
+import { merge } from 'webpack-merge';
+
 const webpack = require('webpack');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const merge = require('webpack-merge');
+
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
