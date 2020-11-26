@@ -56,6 +56,141 @@
         }
       }
     },
+    "lineup": {
+      "root": "apps/lineup",
+      "sourceRoot": "apps/lineup/src",
+      "projectType": "application",
+      "prefix": "lineup",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "color": true,
+            "commands": [
+              {
+                "command": "npm run build"
+              }
+            ],
+            "cwd": "apps/lineup",
+            "parallel": false
+          }
+        },
+        "build-nx": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "color": true,
+            "commands": [
+              {
+                "command": "echo 'this doesnt work yet'; exit 1;"
+              },
+              {
+                "command": "ls -alt ./apps/lineup/; rm -rf ./apps/lineup/dist"
+              },
+              {
+                "command": "webpack --config ./apps/lineup/webpack.vue.client.js"
+              },
+              {
+                "command": "webpack --config ./apps/lineup/webpack.vue.server.js"
+              },
+              {
+                "command": "webpack --config ./apps/lineup/webpack.serverless.js"
+              },
+              {
+                "command": "mkdir -p ./apps/lineup/dist/ && cp package.json ./apps/lineup/dist/ && cp -r ./apps/lineup/src/templates ./apps/lineup/dist/"
+              },
+              {
+                "command": "ls -alt ./apps/lineup/dist;"
+              }
+            ],
+            "parallel": false
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "color": true,
+            "commands": [
+              {
+                "command": "npm run serve"
+              }
+            ],
+            "cwd": "apps/lineup/",
+            "parallel": false
+          }
+        },
+        "serve-nx": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "color": true,
+            "commands": [
+              {
+                "command": "ls -alt ./apps/test-function/; rm -rf ./apps/test-function/dist"
+              },
+              {
+                "command": "webpack --config ./apps/test-function/webpack.vue.client.js"
+              },
+              {
+                "command": "webpack --config ./apps/test-function/webpack.vue.server.js"
+              },
+              {
+                "command": "webpack --config ./apps/test-function/webpack.serverless.js"
+              },
+              {
+                "command": "mkdir -p apps/test-function/dist/ && cp package.json apps/test-function/dist/ && cp -r apps/test-function/src/templates apps/test-function/dist/"
+              },
+              {
+                "command": "ls -alt ./apps/test-function/dist;"
+              }
+            ],
+            "parallel": false
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "color": true,
+            "commands": [
+              {
+                "command": "npm run lint"
+              }
+            ],
+            "cwd": "apps/lineup/dist/",
+            "parallel": false
+          }
+        },
+        "lint-nx": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/lineup/tsconfig.core.json",
+              "apps/lineup/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/lineup/**/*"]
+          }
+        },
+        "launch": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "color": true,
+            "commands": [
+              {
+                "command": "node index.js"
+              }
+            ],
+            "cwd": "apps/test-function/dist/",
+            "parallel": false
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/test-function/jest.config.js"
+          }
+        }
+      }
+    },
     "test-function": {
       "root": "apps/test-function",
       "sourceRoot": "apps/test-function/src",

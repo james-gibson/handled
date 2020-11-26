@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "schematics": "./tools/schematics/collection.json",
+  "engines": {
+    "npm": ">7"
+  },
   "scripts": {
     "start:debug": "nx serve # --inspect",
     "nx": "nx",
@@ -129,5 +132,9 @@
   },
   "optionalDependencies": {
     "fsevents": "^2.1.3"
-  }
+  },
+  "workspaces": [
+    "./apps/*",
+    "./libs/*"
+  ]
 }
