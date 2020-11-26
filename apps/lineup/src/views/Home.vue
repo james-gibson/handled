@@ -1,6 +1,5 @@
 <template>
   <section class="home ">
-    <h1>Line Up</h1>
     <div class="md-layout md-gutter">
       <div class="md-layout-item">
         <md-card md-with-hover class="card">
@@ -37,7 +36,7 @@
 <script>
 export default {
   name: "Home",
-  components: {}
+  components: {},
 };
 </script>
 
