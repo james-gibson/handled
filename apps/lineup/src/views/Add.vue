@@ -1,6 +1,5 @@
 <template>
   <div class="add-purchase">
-    <h1>Line Up</h1>
     <form class="add">
       <h2>Add Purchase</h2>
       <md-field>
@@ -30,16 +29,16 @@ export default {
       form: {
         name: "",
         cost: "",
-        date: new Date()
-      }
+        date: new Date(),
+      },
     };
   },
   methods: {
     onSubmit() {
       // TODO mutation
-      this.$router.push("/add/eval-values");
-    }
-  }
+      this.$router.push("/eval");
+    },
+  },
 };
 </script>
 
@@ -47,7 +46,7 @@ export default {
 .add-purchase {
   form.add {
     width: 50%;
-    margin: 0 auto;
+    margin: 0 auto 0 0;
   }
 }
 </style>
