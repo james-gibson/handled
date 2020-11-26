@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-link :to="{ name: 'Home' }"><h1>Lineup</h1></router-link>
     <main class="container">
       <router-view />
     </main>
@@ -11,18 +12,10 @@
 
 @import "~vue-material/dist/theme/engine"; // Import the theme engine
 
-@include md-register-theme(
-  "default-dark",
-  (
-    primary: md-get-palette-color(green, A200),
-    // The primary color of your application
-      accent: md-get-palette-color(teal, A700) // The accent or secondary color
-  )
-);
-
 @import "~vue-material/dist/theme/all";
 
 #app {
+  padding: 2rem;
   .md-button {
     margin-left: 0;
   }
