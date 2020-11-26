@@ -48,5 +48,9 @@ export default {
     width: 50%;
     margin: 0 auto 0 0;
   }
+
+  .md-field {
+    margin-bottom: 1.5rem;
+  }
 }
 </style>

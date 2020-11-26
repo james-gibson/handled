@@ -1,6 +1,7 @@
 <template>
   <div :id="id">
     <button type="button">{{ name }}</button>
+    <select></select>
   </div>
 </template>
 
