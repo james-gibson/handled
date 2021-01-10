@@ -1,5 +1,6 @@
+import { merge } from 'webpack-merge';
+
 const webpack = require('webpack');
-const merge = require('webpack-merge');
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
